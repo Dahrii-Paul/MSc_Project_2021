@@ -90,8 +90,10 @@ summary(res)
 sum(res$padj < 0.1, na.rm=TRUE)
 res05 <- results(dds, alpha=0.05)
 summary(res05)
+
 #check the plot
 plotCounts(dds, gene="ENSG00000000003", intgroup="Condition")
+
 #PCA
 vsdata <- vst(dds, blind=FALSE)
 plotPCA(vsdata, intgroup="Condition")
@@ -107,23 +109,7 @@ with(subset(res, padj<.01 & abs(log2FoldChange)>2),
 sum(res05$padj < 0.05, na.rm=TRUE)
 df <- subset(res, res$pvalue <= 0.05 & (res$log2FoldChange > 2 | res$log2FoldChange < -2))
 write.csv(df, "UpandDown.csv")
-df <- subset(res, res$pvalue <= 0.05 & res$log2FoldChange > 2)
-write.csv(df, "Upregulated.csv")
-df <- subset(res, res$pvalue <= 0.05 & res$log2FoldChange < -2)
-write.csv(df, "downregulated.csv")
-### normalization ###
-vsd <- vst(dds, blind=FALSE)
-rld <- rlog(dds, blind=FALSE)
-head(assay(vsd), 10)
-write.csv(assay(vsd), "vst_norm.csv")
-write.csv(assay(rld), "rlog_norm.csv")
-## to extract count data ##
-DGE.results.sorted <- read.csv("UpandDown.csv", row.names = 1)
-DGEgenes <- rownames(subset(DGE.results.sorted, padj < 0.05))
-head(DGE.results.sorted)
-normalizeddata <- read.csv("vst_norm.csv", row.names = 1)
-Visualization <- normalizeddata[DGEgenes,] %>% data.frame()
-write.csv(Visualization, "UpandDown_Visualization.csv")
+
 
 ### Finding Gene Symbol ##
 library('biomaRt')
@@ -150,4 +136,6 @@ A <- merge(df, G_list3, by = "ensembl_gene_id")
 write.csv(A, "UpandDown_withsymbol.csv")
 
 ```
-# [Filter out lncRNA file]()
+## [Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv) (filter p<0.05 and foldChange <2 & <-2) <br />
+## [Padj=NA remove file](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_LncRNA_Up%26down_remove_padj-NA.xlsx)
+

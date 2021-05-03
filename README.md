@@ -11,7 +11,7 @@ list.files()
 library("Rsamtools")
 #load phenotype sample table
 ```
-### *[sample_hiNPCs.CSV](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/sample_hiNPCs.csv) 
+### *[sample_hiNPCs.CSV link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/sample_hiNPCs.csv) <br />* 
 ```
 sampleTable <- read.csv("sample_hiNPCs.CSV", row.names = 1)
 
@@ -144,6 +144,6 @@ write.csv(A, "UpandDown_withsymbol.csv")
 
 ```
 ### *[UpandDown_withsymbol.csv](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/UpandDown_withsymbol.csv)* <br />
-### *[Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv) (filter p<0.05 and foldChange <2 & <-2) <br />
+### *[Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv)(filter p<0.05 and foldChange <2 & <-2) <br />
 ### [Padj=NA remove file link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_LncRNA_Up%26down_remove_padj-NA.xlsx)
 

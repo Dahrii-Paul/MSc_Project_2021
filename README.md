@@ -10,6 +10,9 @@ list.files()
 
 library("Rsamtools")
 #load phenotype sample table
+```
+### *[sample_hiNPCs.CSV](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/sample_hiNPCs.csv) 
+```
 sampleTable <- read.csv("sample_hiNPCs.CSV", row.names = 1)
 
 list.files()
@@ -51,8 +54,8 @@ head(assay(se))
 write.csv(assay(se), "Count.csv")
 
 ```
-### [Count.csv link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/Count.csv) <br />
-### [meta_zika.csv link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/meta_zika.csv) <br />
+### *[Count.csv link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/Count.csv) <br />*
+### *[meta_zika.csv link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/meta_zika.csv) <br />*
 # From count file --> DEGS and extract LncRNA
 ```R
 getwd()
@@ -111,8 +114,10 @@ with(subset(res, padj<.01 & abs(log2FoldChange)>2),
 sum(res05$padj < 0.05, na.rm=TRUE)
 df <- subset(res, res$pvalue <= 0.05 & (res$log2FoldChange > 2 | res$log2FoldChange < -2))
 write.csv(df, "UpandDown.csv")
+```
+### *[UpandDown.csv link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/UpandDown.csv) <br />
 
-
+```R
 ### Finding Gene Symbol ##
 library('biomaRt')
 mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
@@ -138,6 +143,7 @@ A <- merge(df, G_list3, by = "ensembl_gene_id")
 write.csv(A, "UpandDown_withsymbol.csv")
 
 ```
-### [Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv) (filter p<0.05 and foldChange <2 & <-2) <br />
+### *[UpandDown_withsymbol.csv](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/UpandDown_withsymbol.csv)* <br />
+### *[Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv) (filter p<0.05 and foldChange <2 & <-2) <br />
 ### [Padj=NA remove file link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_LncRNA_Up%26down_remove_padj-NA.xlsx)
 

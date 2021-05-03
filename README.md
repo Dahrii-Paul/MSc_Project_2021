@@ -136,6 +136,6 @@ A <- merge(df, G_list3, by = "ensembl_gene_id")
 write.csv(A, "UpandDown_withsymbol.csv")
 
 ```
-## [Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv) (filter p<0.05 and foldChange <2 & <-2) <br />
-## [Padj=NA remove file](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_LncRNA_Up%26down_remove_padj-NA.xlsx)
+### [Filter out lncRNA csv file link:](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_lncRNA_up%26down.csv) (filter p<0.05 and foldChange <2 & <-2) <br />
+### [Padj=NA remove file link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/all_LncRNA_Up%26down_remove_padj-NA.xlsx)
 

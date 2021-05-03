@@ -51,7 +51,7 @@ head(assay(se))
 write.csv(assay(se), "Count.csv")
 
 ```
-# Extract DEGS from count file and find LncRNA
+# From count file --> DEGS and extract LncRNA
 ```R
 getwd()
 setwd("/Users/paul/Documents/work/MSc_Project/R_")

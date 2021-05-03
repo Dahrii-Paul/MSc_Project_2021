@@ -51,6 +51,7 @@ head(assay(se))
 write.csv(assay(se), "Count.csv")
 
 ```
+### [Count.csv link](https://github.com/Dahrii-lab/MSc_Project_2021/blob/main/Count.csv) <br />
 # From count file --> DEGS and extract LncRNA
 ```R
 getwd()
